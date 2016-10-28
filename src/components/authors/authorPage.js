@@ -3,7 +3,9 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = require('react-router').Link;
-var AuthorApi = require('../../api/authorApi');
+// var AuthorApi = require('../../api/authorApi');
+var AuthorStore = require('../../stores/authorStore');
+var AuthorActions = require('../../actions/authorActions');
 var AuthorList = require('./authorList');
 
 var AuthorPage = React.createClass({
@@ -13,11 +15,14 @@ var AuthorPage = React.createClass({
         };
     },
 
+    /*
     componentDidMount: function() {
         if (this.isMounted()) {
-            this.setState({ authors: AuthorApi.getAllAuthors() });
+            // this.setState({ authors: AuthorApi.getAllAuthors() });
+            this.setState({ authors: AuthorStore.getAllAuthors() });
         }
     },
+    */
 
     render: function() {
         return (
